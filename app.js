@@ -24,13 +24,12 @@ if (process.env.NODE_ENV === "development") {
 }
 
 //Handlebars
-app.set("view engine", "hbs");
+app.set("view engine", ".hbs");
 app.engine(
-  "hbs",
+  ".hbs",
   engine({
     layoutsDir: __dirname + "/views/layouts",
     extname: ".hbs",
-    //new configuration parameter
     defaultLayout: "main",
   })
 );
