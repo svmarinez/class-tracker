@@ -34,6 +34,19 @@ app.engine(
   })
 );
 
+//Register public/stylesheets/related JS scripts
+app.use(express.static(path.join(__dirname, "public")));
+app.get("/materialize.min.css", function (req, res) {
+  res.sendFile(
+    __dirname + "/node_modules/materialize-css/dist/css/materialize.min.css"
+  );
+});
+app.get("/materialize.min.js", function (req, res) {
+  res.sendFile(
+    __dirname + "/node_modules/materialize-css/dist/js/materialize.min.js"
+  );
+});
+
 //Routing config
 
 app.use("/", require("./routes/index"));
